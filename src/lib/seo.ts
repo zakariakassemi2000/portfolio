@@ -1,0 +1,108 @@
+import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/data";
+
+export const LOCALES = ["en", "fr"] as const;
+export type Locale = (typeof LOCALES)[number];
+
+const OG_LOCALE: Record<Locale, string> = {
+  en: "en_US",
+  fr: "fr_FR",
+};
+
+const OG_SUBTITLE: Record<Locale, string> = {
+  en: "Data Scientist & AI Engineer · Morocco",
+  fr: "Data Scientist & Ingénieur IA · Maroc",
+};
+
+/** Build a dynamic, localized Open Graph image URL for a page. */
+function ogImageUrl(title: string, subtitle: string): string {
+  const t = title.replace(/\s*\|\s*Zakaria Kassemi.*$/i, "").slice(0, 110);
+  return `${SITE_URL}/api/og?title=${encodeURIComponent(t)}&subtitle=${encodeURIComponent(subtitle)}`;
+}
+
+/** Pick a localized string from an {en,fr} map, falling back to English. */
+export function pick<T>(locale: string, map: { en: T; fr: T; ar?: T }): T {
+  return locale === "fr" ? map.fr : map.en;
+}
+
+interface BuildArgs {
+  locale: string;
+  /** Locale-agnostic path beginning with "/" ("" for home). */
+  path: string;
+  title: string;
+  description: string;
+  keywords?: string[];
+  type?: "website" | "article" | "profile";
+  image?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  tags?: string[];
+  /** Set false to emit robots noindex (e.g. a locale that only falls back to EN content). */
+  indexable?: boolean;
+  /** Locales that actually have content for this page; limits hreflang alternates. Defaults to all. */
+  availableLocales?: readonly string[];
+}
+
+/**
+ * Canonical + hreflang (incl. x-default) + Open Graph + Twitter metadata,
+ * consistent across every page and locale.
+ */
+export function buildMetadata({
+  locale,
+  path,
+  title,
+  description,
+  keywords,
+  type = "website",
+  image,
+  publishedTime,
+  modifiedTime,
+  tags,
+  indexable = true,
+  availableLocales = LOCALES,
+}: BuildArgs): Metadata {
+  const languages: Record<string, string> = {};
+  for (const l of LOCALES) {
+    if (availableLocales.includes(l)) languages[l] = `${SITE_URL}/${l}${path}`;
+  }
+  languages["x-default"] = `${SITE_URL}/en${path}`;
+
+  const url = `${SITE_URL}/${locale}${path}`;
+  const ogLocale = OG_LOCALE[(locale as Locale)] ?? "en_US";
+  const subtitle = OG_SUBTITLE[(locale as Locale)] ?? OG_SUBTITLE.en;
+  const resolvedImage = image ?? ogImageUrl(title, subtitle);
+  const absImage = resolvedImage.startsWith("http") ? resolvedImage : `${SITE_URL}${resolvedImage}`;
+
+  return {
+    title,
+    description,
+    keywords,
+    alternates: { canonical: url, languages },
+    ...(indexable ? {} : { robots: { index: false, follow: true } }),
+    openGraph: {
+      type: type === "profile" ? "profile" : type,
+      title,
+      description,
+      url,
+      siteName: "Zakaria Kassemi — Data Scientist & AI Engineer",
+      locale: ogLocale,
+      alternateLocale: LOCALES.filter((l) => l !== locale).map((l) => OG_LOCALE[l]),
+      images: [{ url: absImage, width: 1200, height: 630, alt: title }],
+      ...(publishedTime ? { publishedTime } : {}),
+      ...(modifiedTime ? { modifiedTime } : {}),
+      ...(tags ? { tags } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [{ url: absImage, alt: title }],
+      ...(process.env.NEXT_PUBLIC_TWITTER_HANDLE
+        ? {
+            site: process.env.NEXT_PUBLIC_TWITTER_HANDLE,
+            creator: process.env.NEXT_PUBLIC_TWITTER_HANDLE,
+          }
+        : {}),
+    },
+  };
+}

@@ -1,0 +1,15 @@
+/* TEAM */
+Name: Zakaria Kassemi
+Role: AI Engineer & ML Systems Builder
+Email: zakariakassemi65@gmail.com
+LinkedIn: https://www.linkedin.com/in/zakaria-kassemi-2917b3289
+GitHub: https://github.com/zakariakassemi2000
+Kaggle: https://www.kaggle.com/zakariakasse
+Location: Casablanca, Morocco
+
+/* SITE */
+Last update: 2025/05/20
+Language: English, French, Arabic
+Doctype: HTML5
+Technologies: Next.js, TypeScript, Tailwind CSS, next-intl
+Hosted on: zakariakassemi.com

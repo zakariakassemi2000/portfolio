@@ -1,0 +1,158 @@
+import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { GameProvider } from "@/contexts/GameContext";
+import PersistentGameOverlay from "@/components/games/PersistentGameOverlay";
+import { PersonSchema, WebsiteSchema, OrganizationSchema } from "@/components/seo/JsonLd";
+import Analytics from "@/components/analytics/Analytics";
+import WebMCP from "@/components/webmcp/WebMCP";
+import {
+  projects,
+  blogPosts,
+  learningTopics,
+  EMAIL,
+  PHONE,
+  GITHUB_URL,
+  LINKEDIN_URL,
+  KAGGLE_URL,
+} from "@/lib/data";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://zakariakassemi.com"),
+  title: {
+    default: "Zakaria Kassemi | Data Scientist & AI Engineer",
+    template: "%s | Zakaria Kassemi",
+  },
+  description:
+    "Data Scientist & AI Engineer specializing in ML, RAG chatbots, data analysis, and production model deployment. Based in Morocco. Available immediately for remote positions.",
+  keywords: [
+    "Data Scientist",
+    "AI Engineer",
+    "Machine Learning",
+    "RAG",
+    "NLP",
+    "Deep Learning",
+    "MLOps",
+    "Python",
+    "Azure",
+    "Morocco",
+    "Zakaria Kassemi",
+  ],
+  authors: [{ name: "Zakaria Kassemi", url: "https://zakariakassemi.com" }],
+  creator: "Zakaria Kassemi",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://zakariakassemi.com",
+    siteName: "Zakaria Kassemi | Data Scientist & AI Engineer",
+    title: "Zakaria Kassemi | Data Scientist & AI Engineer",
+    description:
+      "Data Scientist & AI Engineer with experience in ML, RAG chatbots, data analysis, and production deployment. Available immediately.",
+    images: [
+      {
+        url: "/api/og",
+        width: 1200,
+        height: 630,
+        alt: "Zakaria Kassemi - Data Scientist & AI Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zakaria Kassemi | Data Scientist & AI Engineer",
+    description: "Data Scientist & AI Engineer specializing in ML, RAG, and production deployment. Based in Morocco.",
+    images: ["/api/og"],
+  },
+  alternates: {
+    canonical: "https://zakariakassemi.com/en",
+    languages: {
+      en: "https://zakariakassemi.com/en",
+      fr: "https://zakariakassemi.com/fr",
+    },
+  },
+  verification: {
+    // Set GOOGLE_SITE_VERIFICATION / BING_SITE_VERIFICATION in your env (.env / Vercel).
+    ...(process.env.GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+      : {}),
+    ...(process.env.BING_SITE_VERIFICATION
+      ? { other: { "msvalidate.01": process.env.BING_SITE_VERIFICATION } }
+      : {}),
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as "en" | "fr")) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
+
+  // Compact catalog handed to the WebMCP client component so in-browser AI
+  // agents can search and navigate the site (registered on every page).
+  const webmcpProjects = projects.map((p) => ({
+    title: p.title,
+    path: `/projects/${p.id}`,
+    category: Array.isArray(p.category) ? p.category[0] : (p.category as string | undefined),
+  }));
+  const webmcpPosts = blogPosts.map((p) => ({ title: p.title, path: `/blog/${p.slug}`, category: p.category }));
+  const webmcpTopics = learningTopics.map((t) => ({ title: t.title, path: `/learning/${t.id}`, category: t.category }));
+
+  return (
+    <>
+      <link rel="alternate" type="application/rss+xml" title="Zakaria Kassemi Blog" href="/feed.xml" />
+      <PersonSchema />
+      <WebsiteSchema />
+      <OrganizationSchema />
+      <NextIntlClientProvider messages={messages}>
+        <ThemeProvider locale={locale}>
+          <GameProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <PersistentGameOverlay />
+          </GameProvider>
+        </ThemeProvider>
+      </NextIntlClientProvider>
+      <WebMCP
+        locale={locale}
+        sections={["projects", "blog", "learning", "games", "services", "about", "contact"]}
+        projects={webmcpProjects}
+        posts={webmcpPosts}
+        topics={webmcpTopics}
+        contact={{ email: EMAIL, phone: PHONE, github: GITHUB_URL, linkedin: LINKEDIN_URL, kaggle: KAGGLE_URL }}
+      />
+      <Analytics />
+    </>
+  );
+}
