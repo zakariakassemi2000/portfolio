@@ -17,10 +17,6 @@ export interface ManimVideoMeta {
   src: string;
   /** French version rendered with _FR scene class */
   srcFr?: string;
-  /** YouTube video ID for EN version — takes priority over src when set */
-  ytId?: string;
-  /** YouTube video ID for FR version — takes priority over srcFr when set */
-  ytIdFr?: string;
 }
 
 export const manimVideos: Record<string, ManimVideoMeta[]> = {
@@ -37,8 +33,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_intuition.py",
       src:   "/manim/linear-regression/LR_01_Intuition.mp4",
       srcFr: "/manim/linear-regression/LR_01_Intuition_FR.mp4",
-      ytId:        "kwu3IqCc82A",
-      ytIdFr:      "AGv2ldsoLWo",
     },
     {
       id:          "lr-v2",
@@ -50,8 +44,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v2_equation.py",
       src:   "/manim/linear-regression/LR_02_Equation.mp4",
       srcFr: "/manim/linear-regression/LR_02_Equation_FR.mp4",
-      ytId:        "oTo7fiz8PsU",
-      ytIdFr:      "0pkdI8_BmD4",
     },
     {
       id:          "lr-v3",
@@ -63,8 +55,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v3_cost_function.py",
       src:   "/manim/linear-regression/LR_03_CostFunction.mp4",
       srcFr: "/manim/linear-regression/LR_03_CostFunction_FR.mp4",
-      ytId:        "72BvpDCdJz0",
-      ytIdFr:      "f-Z5tK5WpPg",
     },
     {
       id:          "lr-v4",
@@ -76,8 +66,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v4_gradient_descent.py",
       src:   "/manim/linear-regression/LR_04_GradientDescent.mp4",
       srcFr: "/manim/linear-regression/LR_04_GradientDescent_FR.mp4",
-      ytId:        "kXK5GaMPwMQ",
-      ytIdFr:      "GdYqFgJkp1M",
     },
     {
       id:          "lr-v5",
@@ -89,8 +77,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v5_evaluation_metrics.py",
       src:   "/manim/linear-regression/LR_05_Evaluation.mp4",
       srcFr: "/manim/linear-regression/LR_05_Evaluation_FR.mp4",
-      ytId:        "dJekuToVyg4",
-      ytIdFr:      "74kQbzjv01I",
     },
     {
       id:          "lr-v6a",
@@ -102,8 +88,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v6_multiple_regression.py",
       src:   "/manim/linear-regression/LR_06a_FromOneTo2Features.mp4",
       srcFr: "/manim/linear-regression/LR_06a_FromOneTo2Features_FR.mp4",
-      ytId:        "LoC7FO2Wa2E",
-      ytIdFr:      "F8b8Ldy_e8s",
     },
     {
       id:          "lr-v6b",
@@ -115,8 +99,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v6_multiple_regression.py",
       src:   "/manim/linear-regression/LR_06b_RegressionPlane.mp4",
       srcFr: "/manim/linear-regression/LR_06b_RegressionPlane_FR.mp4",
-      ytId:        "MlzOauwBLqs",
-      ytIdFr:      "q2eRJrUibhE",
     },
     {
       id:          "lr-v6c",
@@ -128,8 +110,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v6_multiple_regression.py",
       src:   "/manim/linear-regression/LR_06c_DesignMatrix.mp4",
       srcFr: "/manim/linear-regression/LR_06c_DesignMatrix_FR.mp4",
-      ytId:        "BwYE4_iM6xk",
-      ytIdFr:      "z3j9B1B1KLM",
     },
   ],
 
@@ -145,8 +125,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_tree_intuition.py",
       src:   "/manim/decision-tree-rf/DTRF_01_TreeIntuition.mp4",
       srcFr: "/manim/decision-tree-rf/DTRF_01_TreeIntuition_FR.mp4",
-      ytId:        "77no2UQIlXU",
-      ytIdFr:      "S6fScEmPTv0",
     },
     {
       id:          "dtrf-v2",
@@ -158,8 +136,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v2_gini_infogain.py",
       src:   "/manim/decision-tree-rf/DTRF_02_GiniInfoGain.mp4",
       srcFr: "/manim/decision-tree-rf/DTRF_02_GiniInfoGain_FR.mp4",
-      ytId:        "rqjUI8NN9LM",
-      ytIdFr:      "xLTT2XTT5hs",
     },
     {
       id:          "dtrf-v3",
@@ -171,8 +147,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v3_overfit_pruning.py",
       src:   "/manim/decision-tree-rf/DTRF_03_OverfitPrune.mp4",
       srcFr: "/manim/decision-tree-rf/DTRF_03_OverfitPrune_FR.mp4",
-      ytId:        "0larDBs49sc",
-      ytIdFr:      "M8zqVFTXubg",
     },
     {
       id:          "dtrf-v4",
@@ -184,8 +158,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v4_bootstrap.py",
       src:   "/manim/decision-tree-rf/DTRF_04_Bootstrap.mp4",
       srcFr: "/manim/decision-tree-rf/DTRF_04_Bootstrap_FR.mp4",
-      ytId:        "plWzMtyQvRE",
-      ytIdFr:      "jp7lYveV0bI",
     },
     {
       id:          "dtrf-v5",
@@ -197,8 +169,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v5_random_forest.py",
       src:   "/manim/decision-tree-rf/DTRF_05_RandomForest.mp4",
       srcFr: "/manim/decision-tree-rf/DTRF_05_RandomForest_FR.mp4",
-      ytId:        "fnI5b3xOJq4",
-      ytIdFr:      "TkkK3brl6CE",
     },
     {
       id:          "dtrf-v6",
@@ -210,8 +180,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v6_feature_importance.py",
       src:   "/manim/decision-tree-rf/DTRF_06_FeatureImportance.mp4",
       srcFr: "/manim/decision-tree-rf/DTRF_06_FeatureImportance_FR.mp4",
-      ytId:        "7shAF4tOy78",
-      ytIdFr:      "5zhqNfv2SIU",
     },
   ],
 
@@ -224,8 +192,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "PMS_01_NumpyArrays", file: "v1_numpy_arrays.py",
       src:   "/manim/python-ml-stack/PMS_01_NumpyArrays.mp4",
       srcFr: "/manim/python-ml-stack/PMS_01_NumpyArrays_FR.mp4",
-      ytId:        "FsKRrGyRUzE",
-      ytIdFr:      "HvvDAnMmF8A",
     },
     {
       id: "pms-v2", title: "Pandas DataFrames for ML",
@@ -234,8 +200,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "PMS_02_PandasDataFrame", file: "v2_pandas_dataframe.py",
       src:   "/manim/python-ml-stack/PMS_02_PandasDataFrame.mp4",
       srcFr: "/manim/python-ml-stack/PMS_02_PandasDataFrame_FR.mp4",
-      ytId:        "-63QDCuDvIo",
-      ytIdFr:      "gLZStXudM5o",
     },
     {
       id: "pms-v3", title: "Matplotlib & Seaborn Visualisations",
@@ -244,8 +208,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "PMS_03_Visualization", file: "v3_matplotlib_seaborn.py",
       src:   "/manim/python-ml-stack/PMS_03_Visualization.mp4",
       srcFr: "/manim/python-ml-stack/PMS_03_Visualization_FR.mp4",
-      ytId:        "CTLSwbWthVs",
-      ytIdFr:      "YRbROp-ScPs",
     },
     {
       id: "pms-v4", title: "scikit-learn Pipeline: The Right Way",
@@ -254,8 +216,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "PMS_04_SklearnPipeline", file: "v4_sklearn_pipeline.py",
       src:   "/manim/python-ml-stack/PMS_04_SklearnPipeline.mp4",
       srcFr: "/manim/python-ml-stack/PMS_04_SklearnPipeline_FR.mp4",
-      ytId:        "8SUnqq1f1kY",
-      ytIdFr:      "KnizEnvWMDc",
     },
     {
       id: "pms-v5", title: "EDA Workflow: From Raw Data to Insight",
@@ -264,8 +224,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "PMS_05_EDAWorkflow", file: "v5_eda_workflow.py",
       src:   "/manim/python-ml-stack/PMS_05_EDAWorkflow.mp4",
       srcFr: "/manim/python-ml-stack/PMS_05_EDAWorkflow_FR.mp4",
-      ytId:        "2X-CcG88q1Q",
-      ytIdFr:      "9dmQmWPNd6U",
     },
   ],
 
@@ -278,8 +236,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "LA_01_VectorsDotProduct", file: "v1_vectors_dotproduct.py",
       src:   "/manim/linear-algebra/LA_01_VectorsDotProduct.mp4",
       srcFr: "/manim/linear-algebra/LA_01_VectorsDotProduct_FR.mp4",
-      ytId:        "wjS7iOJxCXU",
-      ytIdFr:      "jk4n3bkvhtQ",
     },
     {
       id: "la-v2", title: "Matrix Multiplication Explained",
@@ -288,8 +244,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "LA_02_MatrixMultiply", file: "v2_matrix_multiplication.py",
       src:   "/manim/linear-algebra/LA_02_MatrixMultiply.mp4",
       srcFr: "/manim/linear-algebra/LA_02_MatrixMultiply_FR.mp4",
-      ytId:        "ecYhcXS9ei0",
-      ytIdFr:      "7l6XtYOPuN8",
     },
     {
       id: "la-v3", title: "Eigenvalues & Eigenvectors",
@@ -298,8 +252,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "LA_03_Eigenvalues", file: "v3_eigenvalues.py",
       src:   "/manim/linear-algebra/LA_03_Eigenvalues.mp4",
       srcFr: "/manim/linear-algebra/LA_03_Eigenvalues_FR.mp4",
-      ytId:        "tWoPQIwxcFA",
-      ytIdFr:      "LFegFO8KtqQ",
     },
     {
       id: "la-v4", title: "Singular Value Decomposition (SVD)",
@@ -308,8 +260,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "LA_04_SVD", file: "v4_svd.py",
       src:   "/manim/linear-algebra/LA_04_SVD.mp4",
       srcFr: "/manim/linear-algebra/LA_04_SVD_FR.mp4",
-      ytId:        "XWa03e116BI",
-      ytIdFr:      "bP8h7uz6Y_Y",
     },
     {
       id: "la-v5", title: "Determinant & Geometric Intuition",
@@ -318,8 +268,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "LA_05_Determinant", file: "v5_determinant.py",
       src:   "/manim/linear-algebra/LA_05_Determinant.mp4",
       srcFr: "/manim/linear-algebra/LA_05_Determinant_FR.mp4",
-      ytId:        "5PcFK8J9Fec",
-      ytIdFr:      "aJ5hgIXQPCw",
     },
   ],
 
@@ -332,8 +280,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "CO_01_Derivatives", file: "v1_derivatives.py",
       src:   "/manim/calculus-optimization/CO_01_Derivatives.mp4",
       srcFr: "/manim/calculus-optimization/CO_01_Derivatives_FR.mp4",
-      ytId:        "fb2A7l8eUWg",
-      ytIdFr:      "exv0U-UMDQo",
     },
     {
       id: "co-v2", title: "Partial Derivatives & Gradients",
@@ -342,8 +288,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "CO_02_PartialDerivatives", file: "v2_partial_derivatives.py",
       src:   "/manim/calculus-optimization/CO_02_PartialDerivatives.mp4",
       srcFr: "/manim/calculus-optimization/CO_02_PartialDerivatives_FR.mp4",
-      ytId:        "JCosACn7hVw",
-      ytIdFr:      "IxStfX-GYe4",
     },
     {
       id: "co-v3", title: "Chain Rule & Backpropagation",
@@ -352,8 +296,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "CO_03_ChainRuleBackprop", file: "v3_chain_rule_backprop.py",
       src:   "/manim/calculus-optimization/CO_03_ChainRuleBackprop.mp4",
       srcFr: "/manim/calculus-optimization/CO_03_ChainRuleBackprop_FR.mp4",
-      ytId:        "cV3rGauTwE0",
-      ytIdFr:      "wNtdcPeKxlA",
     },
     {
       id: "co-v4", title: "Optimizer Comparison: SGD, Momentum, Adam",
@@ -362,8 +304,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "CO_04_Optimizers", file: "v4_optimizers.py",
       src:   "/manim/calculus-optimization/CO_04_Optimizers.mp4",
       srcFr: "/manim/calculus-optimization/CO_04_Optimizers_FR.mp4",
-      ytId:        "wL00A8HCETc",
-      ytIdFr:      "oRw0KqC17KY",
     },
     {
       id: "co-v5", title: "Learning Rate Scheduling",
@@ -372,8 +312,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "CO_05_LRScheduling", file: "v5_lr_scheduling.py",
       src:   "/manim/calculus-optimization/CO_05_LRScheduling.mp4",
       srcFr: "/manim/calculus-optimization/CO_05_LRScheduling_FR.mp4",
-      ytId:        "cAqDeoDqV3Q",
-      ytIdFr:      "y7bosFtsLJk",
     },
   ],
 
@@ -386,8 +324,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "PS_01_Distributions", file: "v1_distributions.py",
       src:   "/manim/probability-statistics/PS_01_Distributions.mp4",
       srcFr: "/manim/probability-statistics/PS_01_Distributions_FR.mp4",
-      ytId:        "lWA-7bNZQJU",
-      ytIdFr:      "wXfmaNjRPjM",
     },
     {
       id: "ps-v2", title: "Bayes' Theorem",
@@ -396,8 +332,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "PS_02_BayesTheorem", file: "v2_bayes_theorem.py",
       src:   "/manim/probability-statistics/PS_02_BayesTheorem.mp4",
       srcFr: "/manim/probability-statistics/PS_02_BayesTheorem_FR.mp4",
-      ytId:        "s9qgOw5OrB0",
-      ytIdFr:      "I2QlcuF9Szw",
     },
     {
       id: "ps-v3", title: "Maximum Likelihood Estimation",
@@ -406,8 +340,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "PS_03_MLE", file: "v3_mle.py",
       src:   "/manim/probability-statistics/PS_03_MLE.mp4",
       srcFr: "/manim/probability-statistics/PS_03_MLE_FR.mp4",
-      ytId:        "SLiNASaA7wY",
-      ytIdFr:      "zzzDbtC43bE",
     },
     {
       id: "ps-v4", title: "Hypothesis Testing: p-values & Tests",
@@ -416,8 +348,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "PS_04_HypothesisTesting", file: "v4_hypothesis_testing.py",
       src:   "/manim/probability-statistics/PS_04_HypothesisTesting.mp4",
       srcFr: "/manim/probability-statistics/PS_04_HypothesisTesting_FR.mp4",
-      ytId:        "Yg0AsruiShs",
-      ytIdFr:      "-OAZFUnr3u0",
     },
     {
       id: "ps-v5", title: "Confidence Intervals",
@@ -426,8 +356,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "PS_05_ConfidenceIntervals", file: "v5_confidence_intervals.py",
       src:   "/manim/probability-statistics/PS_05_ConfidenceIntervals.mp4",
       srcFr: "/manim/probability-statistics/PS_05_ConfidenceIntervals_FR.mp4",
-      ytId:        "WrnciFX568g",
-      ytIdFr:      "1xsBQfI8Cig",
     },
   ],
 
@@ -440,8 +368,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "IT_01_Entropy", file: "v1_entropy.py",
       src:   "/manim/information-theory/IT_01_Entropy.mp4",
       srcFr: "/manim/information-theory/IT_01_Entropy_FR.mp4",
-      ytId:        "4S3GOxF6egQ",
-      ytIdFr:      "a4-IuXUF-iI",
     },
     {
       id: "it-v2", title: "Cross-Entropy Loss Explained",
@@ -450,8 +376,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "IT_02_CrossEntropy", file: "v2_cross_entropy.py",
       src:   "/manim/information-theory/IT_02_CrossEntropy.mp4",
       srcFr: "/manim/information-theory/IT_02_CrossEntropy_FR.mp4",
-      ytId:        "Hk1UZWW1a2o",
-      ytIdFr:      "NPsZi7lAd7w",
     },
     {
       id: "it-v3", title: "KL Divergence: Measuring Distribution Distance",
@@ -460,8 +384,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "IT_03_KLDivergence", file: "v3_kl_divergence.py",
       src:   "/manim/information-theory/IT_03_KLDivergence.mp4",
       srcFr: "/manim/information-theory/IT_03_KLDivergence_FR.mp4",
-      ytId:        "DLCvtJkbMAc",
-      ytIdFr:      "giY5V7uXEO8",
     },
     {
       id: "it-v4", title: "Mutual Information & Feature Selection",
@@ -470,8 +392,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "IT_04_MutualInformation", file: "v4_mutual_information.py",
       src:   "/manim/information-theory/IT_04_MutualInformation.mp4",
       srcFr: "/manim/information-theory/IT_04_MutualInformation_FR.mp4",
-      ytId:        "vL_xwJh2enE",
-      ytIdFr:      "BE7dVuU_ZT8",
     },
   ],
 
@@ -484,8 +404,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "ME_01_ConfusionMatrix", file: "v1_confusion_matrix.py",
       src:   "/manim/model-evaluation/ME_01_ConfusionMatrix.mp4",
       srcFr: "/manim/model-evaluation/ME_01_ConfusionMatrix_FR.mp4",
-      ytId:        "fJTZxXvPDzo",
-      ytIdFr:      "Beqlo012pGo",
     },
     {
       id: "me-v2", title: "ROC Curve & AUC",
@@ -494,8 +412,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "ME_02_ROCAUC", file: "v2_roc_auc.py",
       src:   "/manim/model-evaluation/ME_02_ROCAUC.mp4",
       srcFr: "/manim/model-evaluation/ME_02_ROCAUC_FR.mp4",
-      ytId:        "GgGcD5LPXi0",
-      ytIdFr:      "XJbZyxACgcw",
     },
     {
       id: "me-v3", title: "Cross-Validation Strategies",
@@ -504,8 +420,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "ME_03_CrossValidation", file: "v3_cross_validation.py",
       src:   "/manim/model-evaluation/ME_03_CrossValidation.mp4",
       srcFr: "/manim/model-evaluation/ME_03_CrossValidation_FR.mp4",
-      ytId:        "Q1X1wJ8fqkc",
-      ytIdFr:      "mxwLkqyUsng",
     },
     {
       id: "me-v4", title: "Handling Imbalanced Classes",
@@ -514,8 +428,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "ME_04_ImbalancedClasses", file: "v4_imbalanced_classes.py",
       src:   "/manim/model-evaluation/ME_04_ImbalancedClasses.mp4",
       srcFr: "/manim/model-evaluation/ME_04_ImbalancedClasses_FR.mp4",
-      ytId:        "LCztvfjKzsw",
-      ytIdFr:      "S6KZxzTqwZ8",
     },
     {
       id: "me-v5", title: "Calibration: Do Probabilities Mean Anything?",
@@ -524,8 +436,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "ME_05_Calibration", file: "v5_calibration.py",
       src:   "/manim/model-evaluation/ME_05_Calibration.mp4",
       srcFr: "/manim/model-evaluation/ME_05_Calibration_FR.mp4",
-      ytId:        "OiGhAc88aR0",
-      ytIdFr:      "QRu7u_nahFg",
     },
   ],
 
@@ -538,8 +448,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "EA_01_BiasVariance", file: "v1_bias_variance.py",
       src:   "/manim/error-analysis/EA_01_BiasVariance.mp4",
       srcFr: "/manim/error-analysis/EA_01_BiasVariance_FR.mp4",
-      ytId:        "mV7dZ5tUuG4",
-      ytIdFr:      "rUvUkTDJkmk",
     },
     {
       id: "ea-v2", title: "Learning Curves: Diagnosing Model Problems",
@@ -548,8 +456,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "EA_02_LearningCurves", file: "v2_learning_curves.py",
       src:   "/manim/error-analysis/EA_02_LearningCurves.mp4",
       srcFr: "/manim/error-analysis/EA_02_LearningCurves_FR.mp4",
-      ytId:        "zoYvToXvtok",
-      ytIdFr:      "tXZYkaqcSY4",
     },
     {
       id: "ea-v3", title: "Regularization: L1, L2 & Elastic Net",
@@ -558,8 +464,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "EA_03_Regularization", file: "v3_regularization.py",
       src:   "/manim/error-analysis/EA_03_Regularization.mp4",
       srcFr: "/manim/error-analysis/EA_03_Regularization_FR.mp4",
-      ytId:        "AlEyqXwkkQ4",
-      ytIdFr:      "r1VHHFYxeCI",
     },
     {
       id: "ea-v4", title: "Validation Strategies: The Right Way to Tune",
@@ -568,8 +472,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "EA_04_ValidationStrategies", file: "v4_validation_strategies.py",
       src:   "/manim/error-analysis/EA_04_ValidationStrategies.mp4",
       srcFr: "/manim/error-analysis/EA_04_ValidationStrategies_FR.mp4",
-      ytId:        "iPCQSjSW8IU",
-      ytIdFr:      "R1r-g9nRAxM",
     },
   ],
 
@@ -582,8 +484,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "FE_01_Scaling", file: "v1_scaling.py",
       src:   "/manim/feature-engineering/FE_01_Scaling.mp4",
       srcFr: "/manim/feature-engineering/FE_01_Scaling_FR.mp4",
-      ytId:        "M7ZQv5BXjis",
-      ytIdFr:      "g7dOC38MsFI",
     },
     {
       id: "fe-v2", title: "Encoding Categorical Features",
@@ -592,8 +492,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "FE_02_Encoding", file: "v2_encoding.py",
       src:   "/manim/feature-engineering/FE_02_Encoding.mp4",
       srcFr: "/manim/feature-engineering/FE_02_Encoding_FR.mp4",
-      ytId:        "DvYfWHD6KI8",
-      ytIdFr:      "xlLVc-ld7Io",
     },
     {
       id: "fe-v3", title: "Missing Value Imputation",
@@ -602,8 +500,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "FE_03_Imputation", file: "v3_imputation.py",
       src:   "/manim/feature-engineering/FE_03_Imputation.mp4",
       srcFr: "/manim/feature-engineering/FE_03_Imputation_FR.mp4",
-      ytId:        "2SE5HixpQEQ",
-      ytIdFr:      "VPgJIDKE-yQ",
     },
     {
       id: "fe-v4", title: "Feature Creation: Interactions & Polynomials",
@@ -612,8 +508,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "FE_04_FeatureCreation", file: "v4_feature_creation.py",
       src:   "/manim/feature-engineering/FE_04_FeatureCreation.mp4",
       srcFr: "/manim/feature-engineering/FE_04_FeatureCreation_FR.mp4",
-      ytId:        "ldz0Nlm960c",
-      ytIdFr:      "CP0l0kIE12g",
     },
     {
       id: "fe-v5", title: "Pipeline Design & Avoiding Data Leakage",
@@ -622,8 +516,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "FE_05_PipelineLeakage", file: "v5_pipeline_leakage.py",
       src:   "/manim/feature-engineering/FE_05_PipelineLeakage.mp4",
       srcFr: "/manim/feature-engineering/FE_05_PipelineLeakage_FR.mp4",
-      ytId:        "NQ--weDISIQ",
-      ytIdFr:      "MbGDRMYrmkg",
     },
   ],
 
@@ -636,8 +528,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "NB_01_BayesClassifier", file: "v1_bayes_classifier.py",
       src:   "/manim/naive-bayes/NB_01_BayesClassifier.mp4",
       srcFr: "/manim/naive-bayes/NB_01_BayesClassifier_FR.mp4",
-      ytId:        "T_APz2DChEg",
-      ytIdFr:      "jIevxUw4mMw",
     },
     {
       id: "nb-v2", title: "Gaussian Naive Bayes",
@@ -646,8 +536,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "NB_02_GaussianNB", file: "v2_gaussian_nb.py",
       src:   "/manim/naive-bayes/NB_02_GaussianNB.mp4",
       srcFr: "/manim/naive-bayes/NB_02_GaussianNB_FR.mp4",
-      ytId:        "o4_CVvcG7_g",
-      ytIdFr:      "6jcg4PeTxQs",
     },
     {
       id: "nb-v3", title: "Laplace Smoothing: Handling Unseen Words",
@@ -656,8 +544,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "NB_03_LaplaceSmoothing", file: "v3_laplace_smoothing.py",
       src:   "/manim/naive-bayes/NB_03_LaplaceSmoothing.mp4",
       srcFr: "/manim/naive-bayes/NB_03_LaplaceSmoothing_FR.mp4",
-      ytId:        "99Q4vD7erj4",
-      ytIdFr:      "QzpOds2hMBg",
     },
     {
       id: "nb-v4", title: "TF-IDF + Naive Bayes for Text Classification",
@@ -666,8 +552,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "NB_04_TFIDFNaiveBayes", file: "v4_tfidf_nb.py",
       src:   "/manim/naive-bayes/NB_04_TFIDFNaiveBayes.mp4",
       srcFr: "/manim/naive-bayes/NB_04_TFIDFNaiveBayes_FR.mp4",
-      ytId:        "Tp5barPYhZI",
-      ytIdFr:      "Tlb8_3VFqTM",
     },
   ],
 
@@ -680,8 +564,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "SVM_01_Hyperplane", file: "v1_svm_hyperplane.py",
       src:   "/manim/svm-knn-svr/SVM_01_Hyperplane.mp4",
       srcFr: "/manim/svm-knn-svr/SVM_01_Hyperplane_FR.mp4",
-      ytId:        "GAEiArl8bzw",
-      ytIdFr:      "KTRle3Z6thY",
     },
     {
       id: "svm-v1b", title: "SVM Margin Geometry",
@@ -690,8 +572,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "SVM_01_Margin", file: "v2_svm_margin.py",
       src:   "/manim/svm-knn-svr/SVM_01_Margin.mp4",
       srcFr: "/manim/svm-knn-svr/SVM_01_Margin_FR.mp4",
-      ytId:        "ibgz8_RRqh4",
-      ytIdFr:      "BJ8EYh33XnY",
     },
     {
       id: "svm-v2", title: "The Kernel Trick",
@@ -700,8 +580,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "SVM_02_Kernel", file: "v3_kernel_trick.py",
       src:   "/manim/svm-knn-svr/SVM_02_Kernel.mp4",
       srcFr: "/manim/svm-knn-svr/SVM_02_Kernel_FR.mp4",
-      ytId:        "0wuRuHrSmLg",
-      ytIdFr:      "hc0D-Wrj70Q",
     },
     {
       id: "svm-v3a", title: "K-Nearest Neighbours (KNN)",
@@ -710,8 +588,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "KNN_01_Basics", file: "v4_knn_basics.py",
       src:   "/manim/svm-knn-svr/KNN_01_Basics.mp4",
       srcFr: "/manim/svm-knn-svr/KNN_01_Basics_FR.mp4",
-      ytId:        "5FvTk-dKNsU",
-      ytIdFr:      "C0myol1K8TY",
     },
     {
       id: "svm-v3b", title: "Support Vector Regression (SVR)",
@@ -720,8 +596,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "SVM_03_SVR", file: "v5_svr.py",
       src:   "/manim/svm-knn-svr/SVM_03_SVR.mp4",
       srcFr: "/manim/svm-knn-svr/SVM_03_SVR_FR.mp4",
-      ytId:        "UKOQ1oOMawQ",
-      ytIdFr:      "UeZjZcE5dys",
     },
     {
       id: "svm-v4", title: "KNN: Distance Metrics & Weighted Voting",
@@ -730,8 +604,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "SVM_04_KNN", file: "v6_knn_distance.py",
       src:   "/manim/svm-knn-svr/SVM_04_KNN.mp4",
       srcFr: "/manim/svm-knn-svr/SVM_04_KNN_FR.mp4",
-      ytId:        "GhboThtx_ao",
-      ytIdFr:      "u4-PdHtgXtM",
     },
     {
       id: "svm-v5", title: "The Curse of Dimensionality",
@@ -740,8 +612,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "SVM_05_CurseDimensionality", file: "v7_curse_dimensionality.py",
       src:   "/manim/svm-knn-svr/SVM_05_CurseDimensionality.mp4",
       srcFr: "/manim/svm-knn-svr/SVM_05_CurseDimensionality_FR.mp4",
-      ytId:        "ryMO1w18t3U",
-      ytIdFr:      "pxjBbgakaUo",
     },
   ],
 
@@ -754,8 +624,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "CLU_01_KMeans", file: "v1_kmeans.py",
       src:   "/manim/clustering/CLU_01_KMeans.mp4",
       srcFr: "/manim/clustering/CLU_01_KMeans_FR.mp4",
-      ytId:        "p4QxXE7U1XY",
-      ytIdFr:      "6tV6nOLzdro",
     },
     {
       id: "clu-v2", title: "Elbow Method & Silhouette Score",
@@ -764,8 +632,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "CL_02_ElbowSilhouette", file: "v2_elbow_silhouette.py",
       src:   "/manim/clustering/CL_02_ElbowSilhouette.mp4",
       srcFr: "/manim/clustering/CL_02_ElbowSilhouette_FR.mp4",
-      ytId:        "I2dsNN_Ljrk",
-      ytIdFr:      "-9ga_patF28",
     },
   ],
 
@@ -778,8 +644,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "PCA_01_Intuition", file: "v1_pca_intuition.py",
       src:   "/manim/pca/PCA_01_Intuition.mp4",
       srcFr: "/manim/pca/PCA_01_Intuition_FR.mp4",
-      ytId:        "qN_MaACVIFc",
-      ytIdFr:      "chRuVQyrx3c",
     },
   ],
 
@@ -792,8 +656,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "ANOM_01_Basics", file: "v1_anomaly_detection.py",
       src:   "/manim/anomaly/ANOM_01_Basics.mp4",
       srcFr: "/manim/anomaly/ANOM_01_Basics_FR.mp4",
-      ytId:        "yaIZYDyGrgo",
-      ytIdFr:      "SkPbg_R0HrY",
     },
   ],
 
@@ -806,8 +668,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "GB_01_BoostingConcept", file: "v1_boosting_concept.py",
       src:   "/manim/gradient-boosting/GB_01_BoostingConcept.mp4",
       srcFr: "/manim/gradient-boosting/GB_01_BoostingConcept_FR.mp4",
-      ytId:        "ULAQMoSG000",
-      ytIdFr:      "VSKNqqPLmos",
     },
   ],
 
@@ -820,8 +680,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "ENS_01_BaggingStacking", file: "v1_bagging_stacking.py",
       src:   "/manim/bagging-stacking/ENS_01_BaggingStacking.mp4",
       srcFr: "/manim/bagging-stacking/ENS_01_BaggingStacking_FR.mp4",
-      ytId:        "Cj-nA3Jrvo8",
-      ytIdFr:      "KovFnxSHJLo",
     },
   ],
 
@@ -834,8 +692,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "MC_01_Strategies", file: "v1_multiclass_strategies.py",
       src:   "/manim/ova-ovo/MC_01_Strategies.mp4",
       srcFr: "/manim/ova-ovo/MC_01_Strategies_FR.mp4",
-      ytId:        "ArALgroajws",
-      ytIdFr:      "zd58-nkykgM",
     },
   ],
 
@@ -848,8 +704,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "HT_01_Search", file: "v1_grid_random_search.py",
       src:   "/manim/hyperparameter-tuning/HT_01_Search.mp4",
       srcFr: "/manim/hyperparameter-tuning/HT_01_Search_FR.mp4",
-      ytId:        "rHWWo6C8-bY",
-      ytIdFr:      "2jcEpsQXpiY",
     },
   ],
 
@@ -862,8 +716,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "FI_01_Visualization", file: "v1_feature_importance_viz.py",
       src:   "/manim/feature-importance/FI_01_Visualization.mp4",
       srcFr: "/manim/feature-importance/FI_01_Visualization_FR.mp4",
-      ytId:        "SWLAQo8XBzY",
-      ytIdFr:      "sMQVwd9t84U",
     },
   ],
 
@@ -876,8 +728,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "PDP_01_Basics", file: "v1_pdp_ice.py",
       src:   "/manim/partial-dependence/PDP_01_Basics.mp4",
       srcFr: "/manim/partial-dependence/PDP_01_Basics_FR.mp4",
-      ytId:        "YbUpYlx2z7s",
-      ytIdFr:      "_hYWy-VAz4M",
     },
   ],
 
@@ -890,8 +740,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       sceneClass:  "TS_01_Basics", file: "v1_time_series_basics.py",
       src:   "/manim/time-series/TS_01_Basics.mp4",
       srcFr: "/manim/time-series/TS_01_Basics_FR.mp4",
-      ytId:        "khmdn9g_kGc",
-      ytIdFr:      "mYKezLDpO5s",
     },
   ],
 
@@ -907,8 +755,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_perceptron.py",
       src:   "/manim/neural-networks/NN_01_Perceptron.mp4",
       srcFr: "/manim/neural-networks/NN_01_Perceptron_FR.mp4",
-      ytId:        "TizEs-wj_tI",
-      ytIdFr:      "mi5dH7iwzGc",
     },
     {
       id:          "nn-v2",
@@ -920,8 +766,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v2_forward_propagation.py",
       src:   "/manim/neural-networks/NN_02_ForwardProp.mp4",
       srcFr: "/manim/neural-networks/NN_02_ForwardProp_FR.mp4",
-      ytId:        "h7PvwKpMkGA",
-      ytIdFr:      "FKXG9AQ8OWk",
     },
     {
       id:          "nn-v3",
@@ -933,8 +777,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v3_backpropagation.py",
       src:   "/manim/neural-networks/NN_03_Backprop.mp4",
       srcFr: "/manim/neural-networks/NN_03_Backprop_FR.mp4",
-      ytId:        "BEqzE5XFv_M",
-      ytIdFr:      "IRkwzzdhrqA",
     },
     {
       id:          "nn-v4",
@@ -946,8 +788,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v4_activation_functions.py",
       src:   "/manim/neural-networks/NN_04_Activations.mp4",
       srcFr: "/manim/neural-networks/NN_04_Activations_FR.mp4",
-      ytId:        "gbZ_EWBiDOk",
-      ytIdFr:      "q1vDRypPIjc",
     },
     {
       id:          "nn-v5",
@@ -959,8 +799,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v5_network_architectures.py",
       src:   "/manim/neural-networks/NN_05_Architectures.mp4",
       srcFr: "/manim/neural-networks/NN_05_Architectures_FR.mp4",
-      ytId:        "LmqRhU9xqaY",
-      ytIdFr:      "BxKdGppqCoI",
     },
   ],
 
@@ -976,8 +814,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_sgd_momentum.py",
       src:   "/manim/dl-optimization/DLOpt_01_SGDMomentum.mp4",
       srcFr: "/manim/dl-optimization/DLOpt_01_SGDMomentum_FR.mp4",
-      ytId:        "5TDP_Bpgh8Y",
-      ytIdFr:      "FVGlxKJked4",
     },
     {
       id:          "dlopt-v2",
@@ -989,8 +825,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v2_adam_rmsprop.py",
       src:   "/manim/dl-optimization/DLOpt_02_Adam.mp4",
       srcFr: "/manim/dl-optimization/DLOpt_02_Adam_FR.mp4",
-      ytId:        "NaXhvwiIqeI",
-      ytIdFr:      "69s0xLvcx1w",
     },
     {
       id:          "dlopt-v3",
@@ -1002,8 +836,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v3_learning_rate_scheduling.py",
       src:   "/manim/dl-optimization/DLOpt_03_LRSchedule.mp4",
       srcFr: "/manim/dl-optimization/DLOpt_03_LRSchedule_FR.mp4",
-      ytId:        "JnZphx_c8xw",
-      ytIdFr:      "oPKq6SEmyHg",
     },
     {
       id:          "dlopt-v4",
@@ -1015,8 +847,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v4_regularization_dropout.py",
       src:   "/manim/dl-optimization/DLOpt_04_Regularization.mp4",
       srcFr: "/manim/dl-optimization/DLOpt_04_Regularization_FR.mp4",
-      ytId:        "QtcreS2ONQM",
-      ytIdFr:      "okISsTEZF2s",
     },
   ],
 
@@ -1032,8 +862,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_convolution_operation.py",
       src:   "/manim/cnn-architectures/CNN_01_Convolution.mp4",
       srcFr: "/manim/cnn-architectures/CNN_01_Convolution_FR.mp4",
-      ytId:        "e8O9nbdP6rU",
-      ytIdFr:      "58Y9mRsStLw",
     },
     {
       id:          "cnn-v2",
@@ -1045,8 +873,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v2_pooling_layers.py",
       src:   "/manim/cnn-architectures/CNN_02_Pooling.mp4",
       srcFr: "/manim/cnn-architectures/CNN_02_Pooling_FR.mp4",
-      ytId:        "PvyNj8uFgTE",
-      ytIdFr:      "Oh14AHR3f5k",
     },
     {
       id:          "cnn-v3",
@@ -1058,8 +884,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v3_cnn_architectures.py",
       src:   "/manim/cnn-architectures/CNN_03_Architectures.mp4",
       srcFr: "/manim/cnn-architectures/CNN_03_Architectures_FR.mp4",
-      ytId:        "zS2B44eXqjY",
-      ytIdFr:      "AvMsNDXdQrM",
     },
   ],
 
@@ -1075,8 +899,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_rnn_basics.py",
       src:   "/manim/rnn-lstm-gru/RNN_01_Basics.mp4",
       srcFr: "/manim/rnn-lstm-gru/RNN_01_Basics_FR.mp4",
-      ytId:        "1ao_YFIK_pc",
-      ytIdFr:      "umFMtn0wnow",
     },
     {
       id:          "rnn-v2",
@@ -1088,8 +910,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v2_lstm.py",
       src:   "/manim/rnn-lstm-gru/RNN_02_LSTM.mp4",
       srcFr: "/manim/rnn-lstm-gru/RNN_02_LSTM_FR.mp4",
-      ytId:        "kaBjaI2H3TY",
-      ytIdFr:      "-GYpGQDk8NA",
     },
     {
       id:          "rnn-v3",
@@ -1101,8 +921,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v3_gru.py",
       src:   "/manim/rnn-lstm-gru/RNN_03_GRU.mp4",
       srcFr: "/manim/rnn-lstm-gru/RNN_03_GRU_FR.mp4",
-      ytId:        "6uwywvh4vQA",
-      ytIdFr:      "aMBsWQBVzME",
     },
   ],
 
@@ -1118,8 +936,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_detection_basics.py",
       src:   "/manim/object-detection/OD_01_DetectionBasics.mp4",
       srcFr: "/manim/object-detection/OD_01_DetectionBasics_FR.mp4",
-      ytId:        "o0SN7_ltwBw",
-      ytIdFr:      "ocEIeg9tdRI",
     },
   ],
 
@@ -1135,8 +951,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_segmentation_basics.py",
       src:   "/manim/image-segmentation/SEG_01_Basics.mp4",
       srcFr: "/manim/image-segmentation/SEG_01_Basics_FR.mp4",
-      ytId:        "G8tLkSO3rbE",
-      ytIdFr:      "jFxim4Yeilk",
     },
   ],
 
@@ -1152,8 +966,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_text_preprocessing.py",
       src:   "/manim/nlp-text/NLP_01_Preprocessing.mp4",
       srcFr: "/manim/nlp-text/NLP_01_Preprocessing_FR.mp4",
-      ytId:        "Bd02R8r3-sE",
-      ytIdFr:      "bjOJ7vCM3BE",
     },
     {
       id:          "nlp-v2",
@@ -1165,8 +977,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v2_tfidf_embeddings.py",
       src:   "/manim/nlp-text/NLP_02_TFIDFEmbeddings.mp4",
       srcFr: "/manim/nlp-text/NLP_02_TFIDFEmbeddings_FR.mp4",
-      ytId:        "hWfPqhXchAk",
-      ytIdFr:      "-kBi4EvHQIE",
     },
   ],
 
@@ -1182,8 +992,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_attention_mechanism.py",
       src:   "/manim/transformers-attention/TRF_01_Attention.mp4",
       srcFr: "/manim/transformers-attention/TRF_01_Attention_FR.mp4",
-      ytId:        "hWP5bnTb01k",
-      ytIdFr:      "vhg61n0E-H8",
     },
     {
       id:          "trf-v2",
@@ -1195,8 +1003,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v2_transformer_architecture.py",
       src:   "/manim/transformers-attention/TRF_02_Architecture.mp4",
       srcFr: "/manim/transformers-attention/TRF_02_Architecture_FR.mp4",
-      ytId:        "pOfUt1bCdLc",
-      ytIdFr:      "-GKxgb_G5Dw",
     },
     {
       id:          "trf-v3",
@@ -1208,8 +1014,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v3_bert_gpt.py",
       src:   "/manim/transformers-attention/TRF_03_BertGPT.mp4",
       srcFr: "/manim/transformers-attention/TRF_03_BertGPT_FR.mp4",
-      ytId:        "fWjc50SByCY",
-      ytIdFr:      "xi3l6LQNSr0",
     },
   ],
 
@@ -1225,8 +1029,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_audio_representation.py",
       src:   "/manim/audio-ml/AUD_01_AudioRepr.mp4",
       srcFr: "/manim/audio-ml/AUD_01_AudioRepr_FR.mp4",
-      ytId:        "NOQFu1bkWxY",
-      ytIdFr:      "O0vbClZsooM",
     },
   ],
 
@@ -1242,8 +1044,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_vae.py",
       src:   "/manim/generative-models/GEN_01_VAE.mp4",
       srcFr: "/manim/generative-models/GEN_01_VAE_FR.mp4",
-      ytId:        "ukdRVt0Ygcs",
-      ytIdFr:      "TKEIbVrElek",
     },
     {
       id:          "gen-v2",
@@ -1255,8 +1055,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v2_gan.py",
       src:   "/manim/generative-models/GEN_02_GAN.mp4",
       srcFr: "/manim/generative-models/GEN_02_GAN_FR.mp4",
-      ytId:        "t6liYdZZOXg",
-      ytIdFr:      "R_Lo_luuLpQ",
     },
   ],
 
@@ -1272,8 +1070,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v1_mdp_basics.py",
       src:   "/manim/reinforcement-learning/RL_01_MDP.mp4",
       srcFr: "/manim/reinforcement-learning/RL_01_MDP_FR.mp4",
-      ytId:        "CwsoXXR1sNI",
-      ytIdFr:      "vmxEuaK6Wwg",
     },
     {
       id:          "rl-v2",
@@ -1285,8 +1081,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v2_q_learning.py",
       src:   "/manim/reinforcement-learning/RL_02_QLearning.mp4",
       srcFr: "/manim/reinforcement-learning/RL_02_QLearning_FR.mp4",
-      ytId:        "INIkkvM-6vU",
-      ytIdFr:      "1o9BgIR8_L8",
     },
     {
       id:          "rl-v3",
@@ -1298,8 +1092,6 @@ export const manimVideos: Record<string, ManimVideoMeta[]> = {
       file:        "v3_policy_gradient.py",
       src:   "/manim/reinforcement-learning/RL_03_PolicyGradient.mp4",
       srcFr: "/manim/reinforcement-learning/RL_03_PolicyGradient_FR.mp4",
-      ytId:        "D43Pcj9IG_g",
-      ytIdFr:      "QJA2WfjTXAE",
     },
   ],
 

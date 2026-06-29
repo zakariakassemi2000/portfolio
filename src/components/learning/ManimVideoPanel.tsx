@@ -119,7 +119,7 @@ function VideoCard({
 // ── Video player ───────────────────────────────────────────────────────────────
 function VideoPlayer({
   video, accentColor, audienceLabel,
-  localTitle, localDescription, videoSrc, ytId, onWatched,
+  localTitle, localDescription, videoSrc, onWatched,
 }: {
   video: ManimVideoMeta;
   accentColor: string;
@@ -127,7 +127,6 @@ function VideoPlayer({
   localTitle: string;
   localDescription: string;
   videoSrc: string;
-  ytId?: string;
   onWatched: () => void;
 }) {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -138,13 +137,7 @@ function VideoPlayer({
     if (videoRef.current) videoRef.current.playbackRate = speed;
   }, [speed]);
 
-  useEffect(() => { setSpeed(1); setVideoLoaded(false); }, [videoSrc, ytId]);
-
-  // YouTube embed URL — privacy-enhanced (youtube-nocookie) so the iframe sets
-  // no tracking cookies until playback; rel=0 hides related, modestbranding=1 minimal logo
-  const ytSrc = ytId
-    ? `https://www.youtube-nocookie.com/embed/${ytId}?rel=0&modestbranding=1&color=white`
-    : null;
+  useEffect(() => { setSpeed(1); setVideoLoaded(false); }, [videoSrc]);
 
   return (
     <AnimatePresence mode="wait">
@@ -157,46 +150,31 @@ function VideoPlayer({
         className="rounded-2xl overflow-hidden border"
         style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
       >
-        {/* Video — YouTube iframe or native <video> */}
+        {/* Video — native <video> */}
         <div className="relative w-full bg-black" style={{ aspectRatio: "16/9" }}>
-          {ytSrc ? (
-            <iframe
-              key={ytSrc}
-              src={ytSrc}
-              title={localTitle}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-              style={{ border: "none" }}
-              onLoad={() => { setVideoLoaded(true); onWatched(); }}
-            />
-          ) : (
-            <>
-              <video
-                ref={videoRef}
-                key={videoSrc}
-                src={videoSrc}
-                controls
-                playsInline
-                preload="auto"
-                className="w-full h-full object-contain"
-                style={{ display: "block" }}
-                onLoadedMetadata={() => setVideoLoaded(true)}
-                onPlay={onWatched}
-                onError={(e) => { (e.currentTarget as HTMLVideoElement).style.display = "none"; }}
-              />
-              {/* Placeholder shown while local video loads */}
-              {!videoLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center text-2xl"
-                    style={{ backgroundColor: `${accentColor}20`, border: `2px dashed ${accentColor}60` }}
-                  >
-                    🎬
-                  </div>
-                </div>
-              )}
-            </>
+          <video
+            ref={videoRef}
+            key={videoSrc}
+            src={videoSrc}
+            controls
+            playsInline
+            preload="auto"
+            className="w-full h-full object-contain"
+            style={{ display: "block" }}
+            onLoadedMetadata={() => setVideoLoaded(true)}
+            onPlay={onWatched}
+            onError={(e) => { (e.currentTarget as HTMLVideoElement).style.display = "none"; }}
+          />
+          {/* Placeholder shown while local video loads */}
+          {!videoLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div
+                className="w-14 h-14 rounded-full flex items-center justify-center text-2xl"
+                style={{ backgroundColor: `${accentColor}20`, border: `2px dashed ${accentColor}60` }}
+              >
+                🎬
+              </div>
+            </div>
           )}
         </div>
 
@@ -210,25 +188,23 @@ function VideoPlayer({
             <span className="text-xs font-mono" style={{ color: "var(--text-muted)" }}>
               {video.duration}
             </span>
-            {/* Speed controls — only shown for local <video>, YouTube has its own */}
-            {!ytId && (
-              <div className="ml-auto flex gap-1">
-                {SPEEDS.map(s => (
-                  <button
-                    key={s}
-                    onClick={() => setSpeed(s)}
-                    className="px-1.5 py-0.5 rounded text-xs font-mono font-bold transition-all"
-                    style={{
-                      backgroundColor: speed === s ? accentColor : "var(--bg-card)",
-                      color: speed === s ? "#fff" : "var(--text-muted)",
-                      border: `1px solid ${speed === s ? accentColor + "60" : "var(--border)"}`,
-                    }}
-                  >
-                    {s}×
-                  </button>
-                ))}
-              </div>
-            )}
+            {/* Speed controls — always shown since it is a local <video> */}
+            <div className="ml-auto flex gap-1">
+              {SPEEDS.map(s => (
+                <button
+                  key={s}
+                  onClick={() => setSpeed(s)}
+                  className="px-1.5 py-0.5 rounded text-xs font-mono font-bold transition-all"
+                  style={{
+                    backgroundColor: speed === s ? accentColor : "var(--bg-card)",
+                    color: speed === s ? "#fff" : "var(--text-muted)",
+                    border: `1px solid ${speed === s ? accentColor + "60" : "var(--border)"}`,
+                  }}
+                >
+                  {s}×
+                </button>
+              ))}
+            </div>
           </div>
           {localDescription !== video.description && (
             <p className="text-xs mt-1.5 leading-relaxed" style={{ color: "var(--text-muted)" }}>
@@ -459,7 +435,6 @@ export default function ManimVideoPanel({ topicId, accentColor }: Props) {
           localTitle={localTitle(activeVideo)}
           localDescription={localDescription(activeVideo)}
           videoSrc={locale === "fr" && activeVideo.srcFr ? activeVideo.srcFr : activeVideo.src}
-          ytId={locale === "fr" ? (activeVideo.ytIdFr ?? activeVideo.ytId) : activeVideo.ytId}
           onWatched={() => markWatched(activeVideo.id)}
         />
       )}

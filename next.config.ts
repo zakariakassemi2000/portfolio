@@ -38,8 +38,7 @@ const nextConfig: NextConfig = {
       "media-src 'self' blob:",
       "connect-src 'self' https://cdn.jsdelivr.net https://www.google-analytics.com https://region1.google-analytics.com https://plausible.io",
       "worker-src 'self' blob:",
-      // YouTube embeds in the learning topic video panels.
-      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
+      "frame-src 'self'",
       "frame-ancestors 'self'",
       "base-uri 'self'",
       "form-action 'self'",

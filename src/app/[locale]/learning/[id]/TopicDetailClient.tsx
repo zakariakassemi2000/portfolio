@@ -14,7 +14,7 @@ import dynamic from "next/dynamic";
 import type { ArchType } from "@/components/learning/visualizations/ArchDiagram";
 import { quizData } from "@/lib/quizData";
 import { getSectionI18n, getKeyFormulaI18n } from "@/lib/learningContent/i18n";
-import { getTopicVideos } from "@/lib/learningContent/manim-videos";
+
 import { VizPlaceholder, VisualizationSelector } from "./VizSelector";
 
 // KaTeX is ~280 KB and MathBlock renders formulas client-side in a useEffect
@@ -25,7 +25,7 @@ const MathBlock = dynamic(() => import("@/components/learning/MathBlock"), {
   loading: () => <div aria-hidden style={{ minHeight: 44 }} />,
 });
 
-const ManimVideoPanel = dynamic(() => import("@/components/learning/ManimVideoPanel"), { ssr: false });
+
 const QuizBlock = dynamic(() => import("@/components/learning/QuizBlock"), { ssr: false });
 const NextTopicsPanel = dynamic(() => import("@/components/learning/NextTopicsPanel"), { ssr: false });
 
@@ -115,17 +115,7 @@ export default function TopicDetailClient({ topicId, accentColor, visualization 
   return (
     <div className="space-y-2">
 
-      {/* ── Manim Video Gallery ──────────────────────────────────────────── */}
-      {getTopicVideos(topicId).length > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="my-8"
-        >
-          <ManimVideoPanel topicId={topicId} accentColor={accentColor} />
-        </motion.div>
-      )}
+
 
       {/* ── Key Formulas ─────────────────────────────────────────────── */}
       {content.keyFormulas.length > 0 && (
