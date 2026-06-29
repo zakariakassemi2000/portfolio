@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Link from "next/link";
-import { Download, MapPin, Globe, Cpu, ArrowRight, Award, Briefcase, GraduationCap, BrainCircuit, Gamepad2, BookOpen } from "lucide-react";
+import { Download, MapPin, Globe, Cpu, ArrowRight, Award, Briefcase, GraduationCap, BrainCircuit, Gamepad2, BookOpen, Layers } from "lucide-react";
 import { GithubIcon, LinkedInIcon, KaggleIcon } from "@/components/ui/SocialIcons";
 import { buildMetadata, pick } from "@/lib/seo";
 import {
@@ -63,10 +63,11 @@ export default async function AboutPage({
       : PERSON.description;
 
   const highlights = [
-    { icon: BrainCircuit, value: "42+", label: locale === "fr" ? "Projets ML" : locale === "ar" ? "مشروع ذكاء اصطناعي" : "ML Projects",       color: "#6c63ff" },
-    { icon: BookOpen,     value: "34",  label: locale === "fr" ? "Sujets appris" : locale === "ar" ? "موضوع تعليمي" : "Learning Topics",       color: "#f59e0b" },
+    { icon: BrainCircuit, value: "5+",  label: locale === "fr" ? "Projets ML" : locale === "ar" ? "مشروع ذكاء اصطناعي" : "ML Projects",       color: "#6c63ff" },
+    { icon: BookOpen,     value: "3",   label: locale === "fr" ? "Certifications" : locale === "ar" ? "الشهادات" : "Certifications",          color: "#00d4aa" },
+    { icon: GraduationCap, value: "34", label: locale === "fr" ? "Sujets d'Apprentissage" : locale === "ar" ? "موضوع تعليمي" : "Learning Topics", color: "#f59e0b" },
     { icon: Gamepad2,     value: "10",  label: locale === "fr" ? "Jeux IA" : locale === "ar" ? "ألعاب ذكاء اصطناعي" : "AI Games Built",        color: "#ff6b6b" },
-    { icon: Award,        value: "10+", label: locale === "fr" ? "Domaines ML" : locale === "ar" ? "مجالات التعلم الآلي" : "ML Domains",        color: "#8b5cf6" },
+    { icon: Layers,       value: "6+",  label: locale === "fr" ? "Domaines ML" : locale === "ar" ? "مجالات التعلم الآلي" : "ML Domains",        color: "#8b5cf6" },
   ];
 
   return (
@@ -93,7 +94,7 @@ export default async function AboutPage({
         </div>
 
         {/* Key numbers highlight bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-12">
           {highlights.map((h) => (
             <div
               key={h.label}
