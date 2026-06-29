@@ -54,6 +54,7 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "about" });
+  const tStats = await getTranslations({ locale, namespace: "stats" });
 
   const description =
     locale === "fr"
@@ -63,11 +64,11 @@ export default async function AboutPage({
       : PERSON.description;
 
   const highlights = [
-    { icon: BrainCircuit, value: "5+",  label: locale === "fr" ? "Projets ML" : locale === "ar" ? "مشروع ذكاء اصطناعي" : "ML Projects",       color: "#6c63ff" },
-    { icon: BookOpen,     value: "3",   label: locale === "fr" ? "Certifications" : locale === "ar" ? "الشهادات" : "Certifications",          color: "#00d4aa" },
-    { icon: GraduationCap, value: "34", label: locale === "fr" ? "Sujets d'Apprentissage" : locale === "ar" ? "موضوع تعليمي" : "Learning Topics", color: "#f59e0b" },
-    { icon: Gamepad2,     value: "10",  label: locale === "fr" ? "Jeux IA" : locale === "ar" ? "ألعاب ذكاء اصطناعي" : "AI Games Built",        color: "#ff6b6b" },
-    { icon: Layers,       value: "6+",  label: locale === "fr" ? "Domaines ML" : locale === "ar" ? "مجالات التعلم الآلي" : "ML Domains",        color: "#8b5cf6" },
+    { icon: BrainCircuit, value: "5+",  label: tStats("projects"),  color: "#6c63ff" },
+    { icon: BookOpen,     value: "3",   label: tStats("notebooks"), color: "#00d4aa" },
+    { icon: GraduationCap, value: "34", label: tStats("learning"),  color: "#f59e0b" },
+    { icon: Gamepad2,     value: "10",  label: tStats("games"),     color: "#ff6b6b" },
+    { icon: Layers,       value: "6+",  label: tStats("domains"),   color: "#8b5cf6" },
   ];
 
   return (
