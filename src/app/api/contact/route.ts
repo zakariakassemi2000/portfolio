@@ -52,9 +52,7 @@ export async function POST(req: Request) {
   const resend = new Resend(apiKey);
   try {
     const { error } = await resend.emails.send({
-      // Use onboarding@resend.dev until you verify zakariakassemi.com in Resend,
-      // then switch to e.g. "Portfolio <contact@zakariakassemi.com>".
-      from: "Portfolio Contact <onboarding@resend.dev>",
+      from: "Portfolio Contact <contact@zakariakassemi.com>",
       to: EMAIL,
       replyTo: email,
       subject: `[Portfolio] ${subject}`,
