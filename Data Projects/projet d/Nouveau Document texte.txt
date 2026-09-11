@@ -1,0 +1,19 @@
+📊 Semaine 2 chez AnalystLab Africa Consulting : de l'analyse de données à la Business Intelligence !
+
+Cette semaine, j'ai endossé le rôle de Business Intelligence Analyst pour concevoir un dashboard exécutif Power BI destiné à une entreprise retail internationale (Global Superstore Dataset : 51 290 commandes, 2011-2014).
+
+🎯 Le défi : transformer des données brutes de ventes en un outil de pilotage interactif pour le management.
+
+🔍 Ce que le dashboard révèle :
+→ 12,64M€ de ventes pour 1,47M€ de profit (marge de 11,6%)
+→ La région Central génère à elle seule 22% des ventes et près de 2x le profit de la région suivante
+→ Une sous-catégorie entière est en perte, malgré 757K€ de chiffre d'affaires
+→ Forte saisonnalité : les ventes doublent entre le Trimestre 1 et le Trimestre 4
+
+🛠️ Construit avec : Power Query (nettoyage & transformation), mesures DAX personnalisées, cartes KPI, visualisations interactives (carte géographique, graphiques croisés, matrice avec mise en forme conditionnelle) et slicers synchronisés sur 2 pages.
+
+Ce projet m'a permis de renforcer mes compétences en modélisation de données, création de KPI pertinents, et surtout en storytelling visuel pour des décideurs non-techniques.
+
+Merci à AnalystLab Africa pour cette montée en compétences pratique sur Power BI ! 🙌
+
+https://lnkd.in/p/eUJUm9fB
