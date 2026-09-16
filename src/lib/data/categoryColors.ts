@@ -12,8 +12,9 @@ export const projectCategoryColors: Record<string, string> = {
   genai:      "#ec4899",
   agents:     "#06b6d4",
   rl:         "#10b981",
-  backend:    "#64748b",
-  deployment: "#f97316",
+  backend:       "#64748b",
+  deployment:    "#f97316",
+  dataanalytics: "#22c55e",
 };
 
 /** Learning category → accent hex (used by the learning hub cards + topic pages). */

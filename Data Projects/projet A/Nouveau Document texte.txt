@@ -1,3 +1,0 @@
-Après avoir exploré, nettoyé et préparé les données avec Python (Pandas, NumPy, Matplotlib, Seaborn), j'ai conçu ce dashboard interactif sur Power BI pour analyser les ventes du premier trimestre 2025.
-Chaque projet est une nouvelle occasion de progresser et de renforcer mes compétences en Data Analytics.
-Les retours sont les bienvenus ! 😊

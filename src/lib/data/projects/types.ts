@@ -3,7 +3,8 @@
 
 export type ProjectCategory =
   | "fraud" | "cv" | "nlp" | "medical" | "timeseries"
-  | "genai" | "agents" | "rl" | "backend" | "deployment";
+  | "genai" | "agents" | "rl" | "backend" | "deployment"
+  | "dataanalytics";
 
 export interface ProjectResult {
   label: string;

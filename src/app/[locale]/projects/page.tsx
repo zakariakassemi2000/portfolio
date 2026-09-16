@@ -13,17 +13,18 @@ import { accentInk } from "@/lib/a11yColor";
 import { projectCategoryColors as categoryColors } from "@/lib/data";
 
 const filters: Array<{ key: string; cat: ProjectCategory | "all" }> = [
-  { key: "filter_all",        cat: "all"        },
-  { key: "filter_fraud",      cat: "fraud"      },
-  { key: "filter_cv",         cat: "cv"         },
-  { key: "filter_nlp",        cat: "nlp"        },
-  { key: "filter_medical",    cat: "medical"    },
-  { key: "filter_timeseries", cat: "timeseries" },
-  { key: "filter_genai",      cat: "genai"      },
-  { key: "filter_agents",     cat: "agents"     },
-  { key: "filter_rl",         cat: "rl"         },
-  { key: "filter_backend",    cat: "backend"    },
-  { key: "filter_deployment", cat: "deployment" },
+  { key: "filter_all",           cat: "all"           },
+  { key: "filter_dataanalytics", cat: "dataanalytics" },
+  { key: "filter_fraud",         cat: "fraud"         },
+  { key: "filter_cv",            cat: "cv"            },
+  { key: "filter_nlp",           cat: "nlp"           },
+  { key: "filter_medical",       cat: "medical"       },
+  { key: "filter_timeseries",    cat: "timeseries"    },
+  { key: "filter_genai",         cat: "genai"         },
+  { key: "filter_agents",        cat: "agents"        },
+  { key: "filter_rl",            cat: "rl"            },
+  { key: "filter_backend",       cat: "backend"       },
+  { key: "filter_deployment",    cat: "deployment"    },
 ];
 
 function matchesSearch(project: typeof projects[0], query: string) {
